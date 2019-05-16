@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<GridPane alignment="center" hgap="10" prefHeight="400.0" prefWidth="456.0" stylesheets="@ScreenStyle.css" vgap="10" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="inventoryapp.Views.PartScreen">
+    <rowConstraints>
+        <RowConstraints maxHeight="31.0" minHeight="10.0" prefHeight="31.0" />
+        <RowConstraints maxHeight="30.0" minHeight="10.0" prefHeight="29.0" />
+        <RowConstraints minHeight="10.0" prefHeight="30.0" />
+        <RowConstraints minHeight="10.0" prefHeight="30.0" />
+        <RowConstraints minHeight="10.0" prefHeight="30.0" />
+        <RowConstraints minHeight="10.0" prefHeight="30.0" />
+        <RowConstraints minHeight="10.0" prefHeight="30.0" />
+        <RowConstraints minHeight="10.0" prefHeight="30.0" />
+    </rowConstraints>
+    <columnConstraints>
+        <ColumnConstraints maxWidth="92.0" minWidth="10.0" prefWidth="33.0" />
+        <ColumnConstraints maxWidth="138.0" minWidth="10.0" prefWidth="101.0" />
+        <ColumnConstraints maxWidth="84.0" minWidth="10.0" prefWidth="74.0" />
+        <ColumnConstraints maxWidth="85.0" minWidth="0.0" prefWidth="44.0" />
+        <ColumnConstraints maxWidth="79.0" minWidth="10.0" prefWidth="78.0" />
+        <ColumnConstraints maxWidth="84.0" minWidth="10.0" prefWidth="66.0" />
+        <ColumnConstraints maxWidth="84.0" minWidth="0.0" prefWidth="0.0" />
+    </columnConstraints>
+    <children>
+        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Add Product" textAlignment="CENTER" wrappingWidth="129.86376953125" GridPane.columnSpan="2">
+            <font>
+                <Font name="System Bold" size="16.0" />
+            </font>
+        </Text>
+        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="ID" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+        <TextField fx:id="partIDField" disable="true" editable="false" promptText="Auto Generate" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Name" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+        <TextField fx:id="partNameField" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Inv" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+        <TextField fx:id="partInStockField" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Price/Cost" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+        <TextField fx:id="partPriceField" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Max" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+        <TextField fx:id="partMaxField" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Min" textAlignment="RIGHT" wrappingWidth="42.14697265625" GridPane.columnIndex="3" GridPane.rowIndex="5" />
+        <TextField fx:id="partMinField" GridPane.columnIndex="4" GridPane.rowIndex="5" />
+        <TextField fx:id="companyMachineField" promptText="Machine ID" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.rowIndex="6" />
+        <Button mnemonicParsing="false" onAction="#handleNewSave" prefHeight="27.0" prefWidth="60.0" text="Save" GridPane.columnIndex="4" GridPane.rowIndex="7">
+            <GridPane.margin>
+                <Insets />
+            </GridPane.margin>
+        </Button>
+        <Button mnemonicParsing="false" onAction="#handleCancel" text="Cancel" GridPane.columnIndex="5" GridPane.rowIndex="7" />
+        <HBox alignment="CENTER_LEFT" layoutX="154.0" layoutY="10.0" prefHeight="25.0" prefWidth="192.0" spacing="10.0" />
+          <RadioButton fx:id="inhouseRadioButton" mnemonicParsing="false" onAction="#addPartInHouseRadio" selected="true" text="In-house" GridPane.columnIndex="2" GridPane.columnSpan="2">
+         <toggleGroup>
+                  <ToggleGroup fx:id="partToggleGroup" />
+         </toggleGroup>
+          </RadioButton>
+          <RadioButton fx:id="outsourcedRadioButton" mnemonicParsing="false" onAction="#addPartOutsourcedRadio" text="Outsourced" toggleGroup="$partToggleGroup" GridPane.columnIndex="4" GridPane.columnSpan="2" />
+      <Label fx:id="companyMachineLabel" text="Machine ID" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+    </children>
+</GridPane>
